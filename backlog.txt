@@ -1,0 +1,25 @@
+URL
+----------------------
+HU1  - sergio s -hecho -compilado
+HU2  - sergio s -hecho -compilado
+HU3  - sergio s -progres
+HU4  - sergio g -progres -compilado ERRORES*
+HU5  - adri
+HU6  - adri
+HU7  - adri
+HU8  - sergio s
+HU9  - sergio g -progres -compilado ERRORES*
+HU10 - adri
+
+TT1 - Sergio g -hecho -modificado por adri
+TT2 - sergio g -hecho -modificado por adri
+
+TT3 - adri -hecho
+TT4 - sergio g -hecho -modificado adri
+TT5 - sergio g -hecho
+TT6 - adri -hecho
+TT7 - adri -hecho
+
+TD1 - adri
+TD2 - sergio s
+TD3 - sergio g
