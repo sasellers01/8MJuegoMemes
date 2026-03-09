@@ -1,10 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Formato: cada <solucion> relaciona un memeId con el realidadId que lo desmiente -->
 <soluciones>
-	<solucion>
-		<meme>Mito: Las mujeres no son buenas en matemáticas</meme>
-		<realidad>Las mujeres obtienen igual o mejores notas en matemáticas</realidad>
-	</solucion>
-	<solucion>
-		<meme>Mito: Solo los hombres pueden liderar equipos</meme>
-		<realidad>El liderazgo no depende del género</realidad>
-	</solucion>
+  <solucion><memeId>1</memeId><realidadId>1</realidadId></solucion>
+  <solucion><memeId>2</memeId><realidadId>2</realidadId></solucion>
+  <solucion><memeId>3</memeId><realidadId>3</realidadId></solucion>
+  <solucion><memeId>4</memeId><realidadId>4</realidadId></solucion>
+  <solucion><memeId>5</memeId><realidadId>5</realidadId></solucion>
+  <solucion><memeId>6</memeId><realidadId>6</realidadId></solucion>
+  <solucion><memeId>7</memeId><realidadId>7</realidadId></solucion>
+  <solucion><memeId>8</memeId><realidadId>8</realidadId></solucion>
+  <solucion><memeId>9</memeId><realidadId>9</realidadId></solucion>
+  <solucion><memeId>10</memeId><realidadId>10</realidadId></solucion>
+  <solucion><memeId>11</memeId><realidadId>11</realidadId></solucion>
+  <solucion><memeId>12</memeId><realidadId>12</realidadId></solucion>
+  <solucion><memeId>13</memeId><realidadId>13</realidadId></solucion>
+  <solucion><memeId>14</memeId><realidadId>14</realidadId></solucion>
+  <solucion><memeId>15</memeId><realidadId>15</realidadId></solucion>
 </soluciones>
