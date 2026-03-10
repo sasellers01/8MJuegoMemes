@@ -6,7 +6,7 @@ Desarrollado como proyecto de aula en el marco del **8 de Marzo, Día Internacio
 
 ---
 
-## 👥 Autoras
+## 👥 Autores
 
 | Nombre | GitHub |
 |--------|--------|
