@@ -4,8 +4,8 @@ URL: https://github.com/sasellers01/8MJuegoMemes/tree/main
 HU1  | Sergio S   | en progreso
 HU2  | Sergio S   | en progreso
 HU3  | Sergio S   | en progreso
-HU4  | Adrián     | en progreso
-HU5  | Adrián     | pendiente
+HU4  | Sergio S   | en progreso
+HU5  | Adrián     | en progreso
 HU6  | Adrián     | pendiente
 HU7  | Adrián     | pendiente
 HU8  | Sergio S   | pendiente
