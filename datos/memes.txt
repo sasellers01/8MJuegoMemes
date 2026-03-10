@@ -16,4 +16,8 @@
 12|La Trad Wife es el ideal femenino (la mujer sumisa y tradicional es superior a la feminista)
 13|Los memes sexistas sobre género son solo chistes inofensivos sin consecuencias reales
 14|Los chistes sexistas no tienen ningún impacto en el comportamiento ni en las actitudes sociales
+<<<<<<< HEAD
 15|Las imágenes generadas con IA que sexualizan a mujeres son entretenimiento sin consecuencias
+=======
+15|Las imágenes generadas con IA que sexualizan a mujeres son entretenimiento sin consecuencias
+>>>>>>> 794625c012665d5850d082bfdd53408f1aa9c6f3

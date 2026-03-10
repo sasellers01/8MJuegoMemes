@@ -1,6 +1,12 @@
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Clase que comprueba y valida el directorio datos y fichero de resultados.
+ * 
+ * @author Sergio Alejandro Seller Svidenko
+ * @version 1.0
+ */
 public class GestorFicheros {
 
     // Rutas de los directorios y ficheros
@@ -14,6 +20,8 @@ public class GestorFicheros {
     /**
      * Verifica que existan los directorios y ficheros necesarios.
      * Si falta algo, informa al usuario y retorna false.
+	 * 
+	 * @return Resultado del verificador de datos
      */
     public boolean verificarDatos() {
         boolean todoBien = true;
