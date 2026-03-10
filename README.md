@@ -11,7 +11,7 @@ Desarrollado como proyecto de aula en el marco del **8 de Marzo, Día Internacio
 | Nombre | GitHub |
 |--------|--------|
 | Sergio Seller | [@sasellers01](https://github.com/sasellers01) |
-| Adrián Tena Gallardo | — |
+| Adrián Tena Gallardo | https://github.com/Adriantena22 |
 | Sergio González | — |
 
 ---
