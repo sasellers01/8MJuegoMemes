@@ -12,7 +12,7 @@ Desarrollado como proyecto de aula en el marco del **8 de Marzo, Día Internacio
 |--------|--------|
 | Sergio Seller | [@sasellers01](https://github.com/sasellers01) |
 | Adrián Tena Gallardo | [@adrian](https://github.com/Adriantena22) |
-| Sergio González | — |
+| Sergio González | [sergio gonzález](https://github.com/SergioGonzalezCastelar) |
 
 ---
 
