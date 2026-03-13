@@ -7,10 +7,10 @@ HU3  | Sergio S   | en progreso
 HU4  | Sergio S   | en progreso
 HU5  | Adrián     | en progreso
 HU6  | Adrián     | pendiente
-HU7  | Sergio G   | pendiente
+HU7  | Sergio G   | compila
 HU8  | Sergio S   | pendiente
 HU9  | Sergio G   | en progreso
-HU10 | Adrián     | pendiente
+HU10 | sergio G   | pendiente
 
 === REQUERIMIENTOS TÉCNICOS ===
 TT1  | Sergio G   | hecho
