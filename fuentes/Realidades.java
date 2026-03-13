@@ -24,6 +24,7 @@ import java.util.Map;
  * que desmiente el meme.
  * 
  * @author Sergio S.
+ * @version 1.0
  */
 public class Realidades {
 

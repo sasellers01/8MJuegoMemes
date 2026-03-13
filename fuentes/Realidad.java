@@ -4,7 +4,8 @@
  * Cada realidad contiene un identificador, el texto del dato
  * real y la fuente oficial de donde se ha obtenido la información.
  * 
- * @author Sergio
+ * @author Sergio S.
+ * @version 1.0
  */
 public class Realidad {
 	

@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "correcta": {"realidad": "Las prácticas machistas en internet que relegan a la mujer al espacio doméstico refuerzan su subordinación; el meme 'vuelve a la cocina' es uno de los más documentados en redes sociales", "fuente": "Crosas y Medina (2019) / Investigación UANL 2022 - Ludivina Cantú Ortiz"},
+    "falsa": {"realidad": "Los estudios demuestran que las mujeres prefieren el ámbito doméstico de forma natural y mayoritaria", "fuente": "Instituto de Sociología Familiar de Viena (2018)"}
+  },
+  {
+    "id": 2,
+    "correcta": {"realidad": "El término 'Ok Charo', surgido en la manosfera, es un mecanismo de misoginia digital que deslegitima y silencia a las mujeres en redes, frenando su participación pública", "fuente": "Informe Instituto de las Mujeres de España 2025"},
+    "falsa": {"realidad": "Ok Charo es una expresión de humor inofensivo sin ningún impacto demostrado en la participación pública de las mujeres", "fuente": "Revista de Lingüística Digital, Universidad de Utrecht (2023)"}
+  },
+  {
+    "id": 3,
+    "correcta": {"realidad": "La palabra 'feminazi' es un estereotipo usado en memes para ridiculizar y deslegitimar el activismo femenino; no describe ninguna realidad del movimiento feminista", "fuente": "Revista Virtualis 2020 / Teknokultura UCM 2021"},
+    "falsa": {"realidad": "El término feminazi describe con precisión a una rama radical del feminismo que promueve la superioridad femenina", "fuente": "Centro de Análisis Político de Berlín, Informe Anual (2021)"}
+  },
+  {
+    "id": 4,
+    "correcta": {"realidad": "Los estereotipos sobre la conducción femenina son infundados; un corpus de 100 memes analizados refuerzan el patriarcado otorgando características negativas a las mujeres sin ninguna base real", "fuente": "Investigación UANL 2022 - Análisis de 100 memes"},
+    "falsa": {"realidad": "Las estadísticas de tráfico confirman que las mujeres tienen más accidentes que los hombres de forma consistente", "fuente": "Dirección General de Seguridad Vial Europea, Estadísticas (2020)"}
+  },
+  {
+    "id": 5,
+    "correcta": {"realidad": "Los memes utilizan la ciberviolencia para deslegitimar el activismo feminista; Facebook fue escenario de ataques masivos contra #UnVioladorEnTuCamino en 2019, documentados en un corpus de 757 memes", "fuente": "Revista Virtualis 2020 - 757 memes analizados"},
+    "falsa": {"realidad": "Las críticas digitales al feminismo son una forma legítima de debate democrático sin efectos negativos sobre las activistas", "fuente": "Fundación para la Libertad de Expresión Digital, Informe (2022)"}
+  },
+  {
+    "id": 6,
+    "correcta": {"realidad": "El uso de la gordofobia contra activistas feministas representa una doble discriminación por género y por cuerpo, empleada para ridiculizar su lucha en lugar de debatir sus ideas", "fuente": "Revista Virtualis 2020 / García-González y Bailey Guedes"},
+    "falsa": {"realidad": "Los comentarios sobre el aspecto físico de las activistas son críticas válidas que no tienen relación con el sexismo", "fuente": "Observatorio de Debates Públicos, Universidad de Edimburgo (2021)"}
+  },
+  {
+    "id": 7,
+    "correcta": {"realidad": "El hashtag STOPfeminazis representa espacios digitales antifeministas que usan métodos de la subcultura troll para llevar a cabo una ofensiva organizada contra el movimiento feminista", "fuente": "Teknokultura UCM 2021"},
+    "falsa": {"realidad": "STOPfeminazis es una respuesta ciudadana legítima ante los excesos reales de un feminismo que se ha vuelto extremista", "fuente": "Instituto de Pensamiento Liberal Europeo, Análisis de Redes (2022)"}
+  },
+  {
+    "id": 8,
+    "correcta": {"realidad": "En 2015 el Nobel Tim Hunt afirmó que las mujeres 'distraen' en laboratorios, generando el hashtag #DistractinglySexy que evidenció la discriminación de género estructural en la ciencia", "fuente": "Diario Feminista 2019 / Caso Nobel Tim Hunt 2015"},
+    "falsa": {"realidad": "Los estudios científicos muestran que los entornos mixtos en laboratorios reducen la productividad investigadora de forma objetiva", "fuente": "Journal of Behavioral Science and Productivity, Vol. 14 (2017)"}
+  },
+  {
+    "id": 9,
+    "correcta": {"realidad": "Calificar a las mujeres de histéricas o bipolares es una forma de violencia simbólica que invalida sus emociones y juicio; no refleja ninguna característica inherente al género femenino", "fuente": "Investigación UANL 2022 - Ludivina Cantú Ortiz"},
+    "falsa": {"realidad": "La psicología clínica confirma que las mujeres tienen mayor inestabilidad emocional hormonal que los hombres de media", "fuente": "American Psychological Review, Edición Especial Género (2019)"}
+  },
+  {
+    "id": 10,
+    "correcta": {"realidad": "Los mandatos que exigen a la mujer cumplir 57 requisitos frente a cinco del hombre son resultado de la ideología patriarcal, no de características naturales de ninguno de los dos géneros", "fuente": "Investigación UANL 2022 - Ludivina Cantú Ortiz"},
+    "falsa": {"realidad": "Las diferencias en expectativas entre hombres y mujeres responden a preferencias biológicas y evolutivas, no a construcciones sociales", "fuente": "Instituto de Psicología Evolutiva de Cambridge, Estudio Comparativo (2020)"}
+  },
+  {
+    "id": 11,
+    "correcta": {"realidad": "Al menos la mitad de las publicaciones en X sobre feminismo son negativas; es habitual atacar la apariencia de mujeres políticas en lugar de debatir sus propuestas", "fuente": "El Salto Diario 2025 / Estudio sobre misoginia visual"},
+    "falsa": {"realidad": "Los comentarios sobre la imagen de las políticas son equivalentes a los que reciben los políticos hombres, por lo que no hay discriminación", "fuente": "Centro de Estudios Parlamentarios de Estrasburgo, Informe (2023)"}
+  },
+  {
+    "id": 12,
+    "correcta": {"realidad": "La figura de la 'Trad Wife' en la manosfera se usa para antagonizar el feminismo y presentar a los hombres como víctimas; no es un modelo natural sino una construcción ideológica de control", "fuente": "Verificat 2025 / Universidad de Amsterdam 2025 - Luis Manuel Hernández Aguilar"},
+    "falsa": {"realidad": "El movimiento Trad Wife es una opción de vida personal y libre que no tiene ninguna relación con ideologías de control patriarcal", "fuente": "Instituto de Estudios de Familia y Sociedad de Varsovia (2024)"}
+  },
+  {
+    "id": 13,
+    "correcta": {"realidad": "Los memes sexistas se propagan rápidamente en redes reforzando prácticas denigratorias que vulneran derechos humanos, aunque se presenten bajo la apariencia de un chiste inofensivo", "fuente": "Universidad Nacional de Luján Argentina 2022 - Tesis de trabajo social"},
+    "falsa": {"realidad": "El humor gráfico en internet, incluidos los memes sexistas, está protegido por la libertad de expresión y no genera ningún daño real", "fuente": "Electronic Frontier Foundation, Informe sobre Humor Digital (2021)"}
+  },
+  {
+    "id": 14,
+    "correcta": {"realidad": "Los hombres expuestos a chistes sexistas mostraron menor disposición a donar a organizaciones de mujeres, confirmando que el humor discriminador tiene consecuencias sociales reales y medibles", "fuente": "Estudio Ford, Boxer, Armstrong y Edel (2008) / ICSO-UDP"},
+    "falsa": {"realidad": "Ningún estudio científico ha logrado demostrar una relación causal entre el consumo de humor sexista y actitudes discriminatorias reales", "fuente": "Journal of Humor Research, Meta-análisis (2015)"}
+  },
+  {
+    "id": 15,
+    "correcta": {"realidad": "El uso de IA generativa para fabricar imágenes que sexualizan o difaman mujeres es una forma creciente de violencia visual; la moderación en redes no es operativa para detectar misoginia implícita", "fuente": "El Salto Diario 2025 / Activista Lilia Giugni"},
+    "falsa": {"realidad": "Las imágenes generadas por IA son ficción y no pueden considerarse violencia porque no representan a ninguna persona real", "fuente": "MIT Digital Ethics Lab, White Paper sobre IA y Contenido (2024)"}
+  }
+]

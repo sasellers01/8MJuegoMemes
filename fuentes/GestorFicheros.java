@@ -11,7 +11,8 @@ import java.io.IOException;
  * 
  * Forma parte de las historias de usuario HU1 y HU2.
  * 
- * @author Sergio
+ * @author Sergio S.
+ * @version 1.0
  */
 public class GestorFicheros {
 	

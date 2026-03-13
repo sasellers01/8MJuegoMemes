@@ -1,0 +1,19 @@
+# Formato: ID|TEXTO_DEL_MEME
+# Separador: | (pipe)
+# Una línea por meme. Las líneas con # se ignoran al parsear.
+
+1|Vuelve a la cocina (la mujer pertenece al espacio doméstico y debe estar subordinada al hombre)
+2|Ok Charo (término para deslegitimar y silenciar la opinión de las mujeres en redes sociales)
+3|La Feminazi (la feminista es alguien en contra de la belleza que rechaza a otras mujeres)
+4|Mujer al volante, peligro constante (las mujeres son incompetentes de forma generalizada)
+5|Las mujeres que protestan merecen burla y ataques digitales (ciberviolencia contra el activismo)
+6|Las activistas feministas son gordas y resentidas (gordofobia para ridiculizar la lucha feminista)
+7|STOPfeminazis (el feminismo es un movimiento extremista que debe ser detenido)
+8|Las mujeres distraen en los laboratorios científicos y no pertenecen al ámbito académico
+9|La mujer es histérica, dramática, loca, celosa y bipolar (irracional e incapaz de controlar emociones)
+10|La mujer perfecta debe cumplir 57 requisitos para el hombre, mientras él solo necesita cinco
+11|Las mujeres políticas deben ser juzgadas por su apariencia, no por sus propuestas
+12|La Trad Wife es el ideal femenino (la mujer sumisa y tradicional es superior a la feminista)
+13|Los memes sexistas sobre género son solo chistes inofensivos sin consecuencias reales
+14|Los chistes sexistas no tienen ningún impacto en el comportamiento ni en las actitudes sociales
+15|Las imágenes generadas con IA que sexualizan a mujeres son entretenimiento sin consecuencias

@@ -5,7 +5,8 @@
  * Se utiliza para saber qué realidad corresponde
  * a cada meme durante el juego.
  * 
- * @author Sergio
+ * @author Sergio S.
+ * @version 1.0
  */
 public class Solucion {
 	

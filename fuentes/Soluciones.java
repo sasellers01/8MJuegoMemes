@@ -12,14 +12,13 @@ import java.util.Map;
  * 
  * Formato del fichero XML:
  * 
- * <soluciones>
- *     <solucion>
- *         <memeId>1</memeId>
- *         <realidadId>1</realidadId>
- *     </solucion>
- * </soluciones>
+ * &lt;solucion&gt;
+ *   &lt;memeId&gt;1&lt;/memeId&gt;
+ *   &lt;realidadId&gt;1&lt;/realidadId&gt;
+ * &lt;/solucion&gt;
  * 
  * @author Sergio S.
+ * @version 1.0
  */
 public class Soluciones {
 

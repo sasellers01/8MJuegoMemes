@@ -5,6 +5,7 @@
  * del bulo o frase que será mostrado al usuario.
  * 
  * @author Sergio S.
+ * @version 1.0
  */
 public class Meme {
 	

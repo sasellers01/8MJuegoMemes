@@ -20,6 +20,7 @@ import java.util.Random;
  * Las líneas que empiezan por # se consideran comentarios y se ignoran.
  * 
  * @author Sergio S.
+ * @version 1.0
  */
 public class Memes {
 
