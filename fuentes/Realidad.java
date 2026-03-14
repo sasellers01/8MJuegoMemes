@@ -7,6 +7,8 @@
  * @author Sergio S.
  * @version 1.0
  */
+package com.iescastelar;
+
 public class Realidad {
 	
 	private Integer id;
