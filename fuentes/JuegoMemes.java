@@ -1,6 +1,6 @@
+import java.util.*;
 import java.io.*;
 import java.nio.file.*;
-import java.util.*;
 
 /**
  * Archivo independiente del juego de memes.
@@ -224,12 +224,12 @@ public class JuegoMemes {
         System.out.println("        JUEGO DE MEMES VS REALIDAD     ");
         System.out.println("═══════════════════════════════════════\n");
 
-	// Crear directorio resultados si no existe
-	try {
-    	java.nio.file.Files.createDirectories(java.nio.file.Path.of("resultados"));
-	} catch (java.io.IOException e) {
-    System.out.println("No se pudo crear el directorio resultados: " + e.getMessage());
-     }
+        // Crear directorio resultados si no existe
+        try {
+            Files.createDirectories(Path.of("resultados"));
+        } catch (IOException e) {
+            System.out.println("No se pudo crear el directorio resultados: " + e.getMessage());
+        }
 
         // Cargar datos
         Map<Integer, Meme>     memes;
@@ -257,37 +257,75 @@ public class JuegoMemes {
         Random        random = new Random();
         Scanner       sc     = new Scanner(System.in);
         int           puntos = 0;
+        List<Integer> memesMostrados = new ArrayList<>();  // Control de repetición
 
-        // ── Bucle de 5 memes ──────────────────────────────────────────────
+        // ── Bucle de 5 memes con opciones numeradas ──────────────────────────
         for (int ronda = 1; ronda <= TOTAL_MEMES; ronda++) {
 
             System.out.println("──────────────────────────────────────");
             System.out.println("  MEME " + ronda + " de " + TOTAL_MEMES);
             System.out.println("──────────────────────────────────────");
 
-            // Seleccionar meme aleatorio
-            int    memeId    = ids.get(random.nextInt(ids.size()));
+            // Seleccionar meme aleatorio sin repetir
+            int memeId;
+            do {
+                memeId = ids.get(random.nextInt(ids.size()));
+            } while (memesMostrados.contains(memeId) && memesMostrados.size() < ids.size());
+            memesMostrados.add(memeId);
+
             Meme   meme      = memes.get(memeId);
             int    realId    = soluciones.getOrDefault(memeId, -1);
             Realidad realidad = realidades.get(realId);
 
             System.out.println("\n  » " + meme.texto + "\n");
-            System.out.print("Escribe la realidad que desmiente este meme: ");
-            String respuesta = sc.nextLine().trim();
 
-            boolean acierto = realidad != null
-                    && respuesta.equalsIgnoreCase(realidad.texto);
+            // Crear lista de opciones (realidad correcta + 2 falsas de otros memes)
+            List<Realidad> opciones = new ArrayList<>();
+            opciones.add(realidad); // opción correcta
+
+            // Obtener IDs de otras realidades (excluyendo la correcta)
+            List<Integer> otrosIds = new ArrayList<>(realidades.keySet());
+            otrosIds.remove((Integer) realId);
+            Collections.shuffle(otrosIds);
+
+            // Añadir hasta 2 opciones falsas
+            for (int i = 0; i < Math.min(2, otrosIds.size()); i++) {
+                opciones.add(realidades.get(otrosIds.get(i)));
+            }
+
+            // Barajar opciones para que el orden no sea siempre el mismo
+            Collections.shuffle(opciones);
+
+            // Mostrar opciones numeradas
+            System.out.println("  Elige la realidad que desmiente el meme:");
+            for (int i = 0; i < opciones.size(); i++) {
+                System.out.println("    " + (i + 1) + ". " + opciones.get(i).texto);
+            }
+            System.out.print("\n  Introduce el número (1-" + opciones.size() + "): ");
+
+            int eleccion;
+            try {
+                eleccion = Integer.parseInt(sc.nextLine().trim());
+            } catch (NumberFormatException e) {
+                eleccion = -1;
+            }
+
+            // Verificar si la opción elegida es la correcta
+            boolean acierto = eleccion >= 1 && eleccion <= opciones.size()
+                              && opciones.get(eleccion - 1).id == realidad.id;
 
             if (acierto) {
                 System.out.println("\n  ✓  ¡CORRECTO!\n");
                 puntos++;
             } else {
                 System.out.println("\n  ✗  INCORRECTO");
-                if (realidad != null) {
-                    System.out.println("  La realidad correcta era:");
-                    System.out.println("  → " + realidad + "\n");
-                }
+                // Mostrar la realidad correcta
+                System.out.println("  La realidad correcta era:");
+                System.out.println("  → " + realidad + "\n");
             }
+
+            // Mostrar marcador parcial
+            System.out.println("  Marcador: " + puntos + "/" + ronda + "\n");
         }
 
         // ── Resultado final ───────────────────────────────────────────────
