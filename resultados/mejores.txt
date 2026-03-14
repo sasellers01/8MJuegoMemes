@@ -1,8 +1,1 @@
-# Formato: PUNTUACION|NOMBRE|FECHA
-# Separador: | (pipe)
-# Ordenado de mayor a menor puntuación
-# Máximo 3 entradas
-
-5|Ana García|2026-03-08
-4|Carlos López|2026-03-07
-3|María Pérez|2026-03-06
+A;0
