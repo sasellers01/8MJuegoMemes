@@ -1,16 +1,16 @@
 URL: https://github.com/sasellers01/8MJuegoMemes/tree/main
 
 === HISTORIAS DE USUARIO ===
-HU1  | Sergio S   | en progreso
-HU2  | Sergio S   | en progreso
-HU3  | Sergio S   | en progreso
-HU4  | Sergio S   | en progreso
-HU5  | Adrián     | en progreso
-HU6  | Adrián     | pendiente
-HU7  | Sergio G   | compila
-HU8  | Sergio S   | pendiente
-HU9  | Sergio G   | en progreso
-HU10 | sergio G   | pendiente
+HU1  | Sergio S   | hecho
+HU2  | Sergio S   | hecho
+HU3  | Sergio S   | hecho
+HU4  | Sergio G   | hecho
+HU5  | Adrián     | hecho
+HU6  | Adrián     | hecho
+HU7  | Sergio G   | hecho
+HU8  | Sergio S   | hecho
+HU9  | Sergio G   | hecho
+HU10 | Sergio G   | hecho
 
 === REQUERIMIENTOS TÉCNICOS ===
 TT1  | Sergio G   | hecho
@@ -22,6 +22,6 @@ TT6  | Adrián     | hecho
 TT7  | Adrián     | hecho
 
 === DOCUMENTACIÓN ===
-TD1  | Adrián     | pendiente
-TD2  | Sergio S   | pendiente
-TD3  | Sergio G   | pendiente
+TD1  | Adrián     | hecho
+TD2  | Sergio S   | hecho
+TD3  | Sergio G   | hecho
