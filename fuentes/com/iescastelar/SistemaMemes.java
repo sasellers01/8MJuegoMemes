@@ -1,53 +1,71 @@
 package com.iescastelar;
 
-import java.util.Scanner;
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
 
+/**
+ * HU5 - Muestra un meme al azar y una lista numerada de realidades.
+ * @author Adrián Tena Gallardo
+ */
 public class SistemaMemes {
 
     static class Realidad {
-        int    id;
+        Integer id;
         String textoCorrecto;
         String fuenteCorrecta;
         String textoFalso;
         String fuenteFalsa;
 
-        Realidad(int id, String textoCorrecto, String fuenteCorrecta,
-                         String textoFalso,    String fuenteFalsa) {
-            this.id             = id;
-            this.textoCorrecto  = textoCorrecto;
+        Realidad(Integer id, String textoCorrecto, String fuenteCorrecta,
+                 String textoFalso, String fuenteFalsa) {
+            this.id = id;
+            this.textoCorrecto = textoCorrecto;
             this.fuenteCorrecta = fuenteCorrecta;
-            this.textoFalso     = textoFalso;
-            this.fuenteFalsa    = fuenteFalsa;
+            this.textoFalso = textoFalso;
+            this.fuenteFalsa = fuenteFalsa;
         }
     }
 
-    // ── HU6: Comprueba la respuesta del usuario ───────────────────────────
-    static int comprobarRespuesta(Scanner scanner, int opcionCorrecta,
-                                   Realidad realidad, int puntuacion) {
+    /**
+     * Muestra un meme al azar sin repetir y dos opciones mezcladas.
+     * @param memes mapa de memes cargados
+     * @param realidades lista de realidades cargadas
+     * @param memesUsados lista de IDs ya mostrados
+     * @param puntuacion puntuacion actual
+     * @return numero de opcion correcta (1 o 2)
+     */
+    static Integer mostrarMemeYRealidades(Map<Integer, String> memes,
+                                          List<Realidad> realidades,
+                                          List<Integer> memesUsados,
+                                          Integer puntuacion) {
 
-        // Lee la respuesta del usuario y valida que sea 1, 2 o 3
-        int respuesta = -1;
-        while (respuesta < 1 || respuesta > 3) {
-            try {
-                respuesta = Integer.parseInt(scanner.nextLine().trim());
-                if (respuesta < 1 || respuesta > 3)
-                    System.out.print("Escribe 1, 2 o 3: ");
-            } catch (NumberFormatException e) {
-                System.out.print("Escribe 1, 2 o 3: ");
-            }
+        List<Integer> disponibles = new ArrayList<>(memes.keySet());
+        disponibles.removeAll(memesUsados);
+
+        Random random = new Random();
+        Integer memeId = disponibles.get(random.nextInt(disponibles.size()));
+        memesUsados.add(memeId);
+
+        Realidad realidad = null;
+        for (Realidad r : realidades) {
+            if (r.id.equals(memeId)) { realidad = r; break; }
         }
 
-        // Comprueba si ha acertado
-        if (respuesta == opcionCorrecta) {
-            System.out.println("\n  ✓  ¡CORRECTO!");
-            puntuacion++;
-        } else {
-            System.out.println("\n  ✗  INCORRECTO");
-            System.out.println("  La realidad correcta era:");
-            System.out.println("  → " + realidad.textoCorrecto);
-            System.out.println("     Fuente: " + realidad.fuenteCorrecta);
+        List<String> opciones = new ArrayList<>();
+        opciones.add(realidad.textoCorrecto);
+        opciones.add(realidad.textoFalso);
+        Collections.shuffle(opciones, random);
+
+        System.out.println("\n══════════════════════════════════════════");
+        System.out.println("  Puntuacion actual: " + puntuacion);
+        System.out.println("══════════════════════════════════════════");
+        System.out.println("\nMEME: " + memes.get(memeId));
+        System.out.println("\nQue afirmacion desmiente este meme?\n");
+        for (int i = 0; i < opciones.size(); i++) {
+            System.out.println("  " + (i + 1) + ". " + opciones.get(i));
         }
 
-        return puntuacion;
+        return opciones.indexOf(realidad.textoCorrecto) + 1;
     }
 }
