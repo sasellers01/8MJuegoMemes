@@ -99,8 +99,6 @@ java -cp fuentes JuegoMemes
 
 ## 📚 Fuentes de los datos
 
-Los memes y realidades están documentados con fuentes académicas reales, entre ellas:
-
 - Investigación UANL 2022 — Ludivina Cantú Ortiz
 - Revista Virtualis 2020
 - Teknokultura UCM 2021
@@ -113,4 +111,3 @@ Los memes y realidades están documentados con fuentes académicas reales, entre
 ## 📝 Licencia
 
 MIT License — ver fichero [LICENSE](LICENSE)
-```
