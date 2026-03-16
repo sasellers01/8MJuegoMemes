@@ -4,6 +4,10 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 
+/**
+ * HU5 - Muestra un meme al azar y una lista numerada de realidades.
+ * @author Adrián Tena Gallardo
+ */
 public class SistemaMemes {
 
     static class Realidad {
@@ -23,7 +27,14 @@ public class SistemaMemes {
         }
     }
 
-    // ── HU5: Muestra meme al azar y lista numerada de realidades ─────────────
+    /**
+     * Muestra un meme al azar sin repetir y dos opciones mezcladas.
+     * @param memes mapa de memes cargados
+     * @param realidades lista de realidades cargadas
+     * @param memesUsados lista de IDs ya mostrados
+     * @param puntuacion puntuacion actual
+     * @return numero de opcion correcta (1 o 2)
+     */
     static Integer mostrarMemeYRealidades(Map<Integer, String> memes,
                                           List<Realidad> realidades,
                                           List<Integer> memesUsados,
@@ -54,36 +65,7 @@ public class SistemaMemes {
         for (int i = 0; i < opciones.size(); i++) {
             System.out.println("  " + (i + 1) + ". " + opciones.get(i));
         }
-        System.out.println();
 
         return opciones.indexOf(realidad.textoCorrecto) + 1;
-    }
-
-    // ── HU6: Comprueba la respuesta del usuario ───────────────────────────────
-    static Integer comprobarRespuesta(Scanner scanner, Integer opcionCorrecta,
-                                      Realidad realidad, Integer puntuacion) {
-
-        Integer respuesta = -1;
-        while (respuesta < 1 || respuesta > 3) {
-            try {
-                respuesta = Integer.parseInt(scanner.nextLine().trim());
-                if (respuesta < 1 || respuesta > 3)
-                    System.out.print("Escribe 1, 2 o 3: ");
-            } catch (NumberFormatException e) {
-                System.out.print("Escribe 1, 2 o 3: ");
-            }
-        }
-
-        if (respuesta.equals(opcionCorrecta)) {
-            System.out.println("\n  ✓  ¡CORRECTO!");
-            puntuacion++;
-        } else {
-            System.out.println("\n  ✗  INCORRECTO");
-            System.out.println("  La realidad correcta era:");
-            System.out.println("  → " + realidad.textoCorrecto);
-            System.out.println("     Fuente: " + realidad.fuenteCorrecta);
-        }
-
-        return puntuacion;
     }
 }
