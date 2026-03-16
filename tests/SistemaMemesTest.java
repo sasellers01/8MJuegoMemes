@@ -24,7 +24,7 @@ public class SistemaMemesTest {
         disponibles.removeAll(usados);
 
         assert disponibles.size() == 1 : "FALLO: deberia haber 1 meme disponible";
-        assert disponibles.get(0) == 3 : "FALLO: el meme disponible deberia ser el 3";
+        assert disponibles.get(0).equals(3) : "FALLO: el meme disponible deberia ser el 3";
         System.out.println("Test 1 OK: no se repiten memes");
     }
 
@@ -36,7 +36,7 @@ public class SistemaMemesTest {
         opciones.add("Opcion correcta");
         opciones.add("Opcion falsa");
 
-        int resultado = opciones.indexOf("Opcion correcta") + 1;
+        Integer resultado = opciones.indexOf("Opcion correcta") + 1;
 
         assert resultado == 1 || resultado == 2 : "FALLO: debe devolver 1 o 2";
         System.out.println("Test 2 OK: devuelve opcion valida");
