@@ -67,7 +67,8 @@ java -cp fuentes JuegoMemes
 ├── documentacion/              → Manuales del proyecto
 │   ├── ManualInstalacion.md
 │   ├── ManualUsuario.pdf
-│   └── javadoc/
+│   └── javadoc/                → Documentación generada automáticamente
+│       └── index.html
 └── README.md
 ```
 
