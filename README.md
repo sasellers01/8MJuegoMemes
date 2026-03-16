@@ -114,7 +114,3 @@ Los memes y realidades están documentados con fuentes académicas reales, entre
 
 MIT License — ver fichero [LICENSE](LICENSE)
 ```
-
-Edítalo en GitHub en `main` y el commit:
-```
-Actualizar README con estructura y comandos correctos
