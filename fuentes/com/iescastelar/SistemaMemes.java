@@ -1,4 +1,5 @@
 package com.iescastelar;
+
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
@@ -7,27 +8,27 @@ public class SistemaMemes {
 
     // ── Clase Realidad (HU4) ──────────────────────────────────────────────────
     static class Realidad {
-        int    id;
+        Integer id;
         String textoCorrecto;
         String fuenteCorrecta;
         String textoFalso;
         String fuenteFalsa;
 
-        Realidad(int id, String textoCorrecto, String fuenteCorrecta,
-                         String textoFalso,    String fuenteFalsa) {
-            this.id             = id;
-            this.textoCorrecto  = textoCorrecto;
+        Realidad(Integer id, String textoCorrecto, String fuenteCorrecta,
+                 String textoFalso, String fuenteFalsa) {
+            this.id = id;
+            this.textoCorrecto = textoCorrecto;
             this.fuenteCorrecta = fuenteCorrecta;
-            this.textoFalso     = textoFalso;
-            this.fuenteFalsa    = fuenteFalsa;
+            this.textoFalso = textoFalso;
+            this.fuenteFalsa = fuenteFalsa;
         }
     }
 
     // ── HU5: Muestra meme al azar y lista numerada de realidades ─────────────
-    static int mostrarMemeYRealidades(Map<Integer, String> memes,
-                                      List<Realidad>       realidades,
-                                      List<Integer>        memesUsados,
-                                      int                  puntuacion) {
+    static Integer mostrarMemeYRealidades(Map<Integer, String> memes,
+                                          List<Realidad> realidades,
+                                          List<Integer> memesUsados,
+                                          Integer puntuacion) {
 
         // Filtra los memes que todavía no han salido
         List<Integer> disponibles = new ArrayList<>(memes.keySet());
@@ -35,13 +36,13 @@ public class SistemaMemes {
 
         // Elige uno al azar y lo marca como usado
         Random random = new Random();
-        int    memeId = disponibles.get(random.nextInt(disponibles.size()));
+        Integer memeId = disponibles.get(random.nextInt(disponibles.size()));
         memesUsados.add(memeId);
 
         // Busca la Realidad con el mismo id que el meme
         Realidad realidad = null;
         for (Realidad r : realidades) {
-            if (r.id == memeId) { realidad = r; break; }
+            if (r.id.equals(memeId)) { realidad = r; break; }
         }
 
         // Mezcla correcta y falsa en orden aleatorio
@@ -66,7 +67,7 @@ public class SistemaMemes {
     }
 
     // ── Helpers de parseo ─────────────────────────────────────────────────────
-    static int extraerEntero(String texto) {
+    static Integer extraerEntero(String texto) {
         String resto = texto.substring(texto.indexOf(':') + 1).trim();
         StringBuilder sb = new StringBuilder();
         for (char c : resto.toCharArray()) {
@@ -77,19 +78,19 @@ public class SistemaMemes {
     }
 
     static String extraerJsonAnidado(String texto, String objeto, String clave) {
-        int objPos      = texto.indexOf("\"" + objeto + "\"");
+        Integer objPos = texto.indexOf("\"" + objeto + "\"");
         if (objPos == -1) return null;
-        int llaveAbre   = texto.indexOf('{', objPos);
-        int llaveCierra = texto.indexOf('}', llaveAbre);
+        Integer llaveAbre = texto.indexOf('{', objPos);
+        Integer llaveCierra = texto.indexOf('}', llaveAbre);
         if (llaveAbre == -1 || llaveCierra == -1) return null;
         return extraerJson(texto.substring(llaveAbre, llaveCierra + 1), clave);
     }
 
     static String extraerJson(String texto, String clave) {
-        int i = texto.indexOf("\"" + clave + "\"");
+        Integer i = texto.indexOf("\"" + clave + "\"");
         if (i == -1) return null;
-        int inicio = texto.indexOf('"', texto.indexOf(':', i) + 1) + 1;
-        int fin    = texto.indexOf('"', inicio);
+        Integer inicio = texto.indexOf('"', texto.indexOf(':', i) + 1) + 1;
+        Integer fin = texto.indexOf('"', inicio);
         return (inicio > 0 && fin > inicio) ? texto.substring(inicio, fin) : null;
     }
 
@@ -106,29 +107,28 @@ public class SistemaMemes {
     }
 
     static List<Realidad> leerRealidades(String ruta) throws IOException {
-        List<Realidad> lista     = new ArrayList<>();
-        String         contenido = Files.readString(Path.of(ruta));
+        List<Realidad> lista = new ArrayList<>();
+        String contenido = Files.readString(Path.of(ruta));
         for (String bloque : contenido.split("\\{\\s*\"id\"")) {
             if (bloque.isBlank() || bloque.trim().startsWith("[")) continue;
-            int    id             = extraerEntero(bloque);
-            String textoCorrecto  = extraerJsonAnidado(bloque, "correcta", "realidad");
+            Integer id = extraerEntero(bloque);
+            String textoCorrecto = extraerJsonAnidado(bloque, "correcta", "realidad");
             String fuenteCorrecta = extraerJsonAnidado(bloque, "correcta", "fuente");
-            String textoFalso     = extraerJsonAnidado(bloque, "falsa",    "realidad");
-            String fuenteFalsa    = extraerJsonAnidado(bloque, "falsa",    "fuente");
+            String textoFalso = extraerJsonAnidado(bloque, "falsa", "realidad");
+            String fuenteFalsa = extraerJsonAnidado(bloque, "falsa", "fuente");
             if (textoCorrecto != null && textoFalso != null)
                 lista.add(new Realidad(id, textoCorrecto, fuenteCorrecta,
-                                           textoFalso,    fuenteFalsa));
+                                       textoFalso, fuenteFalsa));
         }
         return lista;
     }
 
     // ── Main: prueba de HU5 ───────────────────────────────────────────────────
     public static void main(String[] args) throws Exception {
-        Map<Integer, String> memes      = leerMemes("datos/memes.txt");
-        List<Realidad>       realidades = leerRealidades("datos/realidades.json");
-        List<Integer>        usados     = new ArrayList<>();
+        Map<Integer, String> memes = leerMemes("datos/memes.txt");
+        List<Realidad> realidades = leerRealidades("datos/realidades.json");
+        List<Integer> usados = new ArrayList<>();
 
-        // Prueba mostrando 3 memes consecutivos sin repetición
         for (int i = 0; i < 3; i++) {
             mostrarMemeYRealidades(memes, realidades, usados, 0);
         }
