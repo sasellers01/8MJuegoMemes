@@ -14,11 +14,11 @@ public class Ranking {
      * @param puntuacionActual Puntuación obtenida por el usuario al finalizar la partida.
      */
     public static void gestionarRanking(int puntuacionActual) {
-        List<int[]> mejores = cargarMejores(); // Cada int[]: [0]=puntuación, ya ordenado desc
+        List<int[]> mejores = cargarMejores();
 
-        // Comprobar si entra en el top 3
+        // CORRECCIÓN: índice [0] en lugar de [1]
         boolean entraEnRanking = mejores.size() < MAX_PUNTUACIONES
-                || puntuacionActual > mejores.get(mejores.size() - 1)[1];
+                || puntuacionActual > mejores.get(mejores.size() - 1)[0];
 
         if (entraEnRanking) {
             System.out.println("\n¡Enhorabuena! Tu puntuación de " + puntuacionActual
@@ -27,9 +27,8 @@ public class Ranking {
             Scanner sc = new Scanner(System.in);
             String nombre = sc.nextLine().trim();
 
-            // Añadir la nueva entrada
-            mejores.add(new int[]{0, puntuacionActual, 0}); // usaremos un mapa mejor
-            guardarMejores(mejores, nombre, puntuacionActual);
+            // CORRECCIÓN: eliminada la línea "mejores.add(...)" que era incorrecta e innecesaria
+            guardarMejores(nombre, puntuacionActual);
         } else {
             System.out.println("\nTu puntuación: " + puntuacionActual
                     + ". No has entrado en el top " + MAX_PUNTUACIONES + ".");
@@ -84,6 +83,7 @@ public class Ranking {
         List<int[]> puntuaciones = new ArrayList<>();
         for (String[] e : entradas) {
             try {
+                // Guardamos en [0], que es el único índice del array
                 puntuaciones.add(new int[]{Integer.parseInt(e[1].trim())});
             } catch (NumberFormatException ex) {
                 // línea malformada, se ignora
@@ -96,12 +96,12 @@ public class Ranking {
 
     /**
      * Añade la nueva puntuación al ranking, ordena y guarda en mejores.txt.
+     * CORRECCIÓN: firma simplificada, sin el parámetro List<int[]> que se ignoraba.
      */
-    private static void guardarMejores(List<int[]> ignorado, String nombre, int puntuacion) {
-        // Recargar entradas completas (con nombres)
+    private static void guardarMejores(String nombre, int puntuacion) {
         List<String[]> entradas = cargarEntradas();
 
-        // Añadir la nueva
+        // Añadir la nueva entrada
         entradas.add(new String[]{nombre, String.valueOf(puntuacion)});
 
         // Ordenar de mayor a menor por puntuación
@@ -151,7 +151,6 @@ public class Ranking {
     // Método main de prueba
     // -------------------------------------------------------------------------
     public static void main(String[] args) {
-        // Simula el final de una partida con puntuación 150
         int puntuacionFinal = 150;
         gestionarRanking(puntuacionFinal);
     }
