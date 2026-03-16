@@ -11,15 +11,15 @@ Desarrollado como proyecto de aula en el marco del **8 de Marzo, Día Internacio
 | Nombre | GitHub |
 |--------|--------|
 | Sergio Seller | [@sasellers01](https://github.com/sasellers01) |
-| Adrián Tena Gallardo | [@adrian](https://github.com/Adriantena22) |
-| Sergio González | [sergio gonzález](https://github.com/SergioGonzalezCastelar) |
+| Adrián Tena Gallardo | [@Adriantena22](https://github.com/Adriantena22) |
+| Sergio González | [@SergioGonzalezCastelar](https://github.com/SergioGonzalezCastelar) |
 
 ---
 
 ## 🕹️ Cómo funciona el juego
 
 1. El sistema muestra un meme con un bulo sobre igualdad de género
-2. El jugador elige cuál de las dos afirmaciones mostradas es la **realidad documentada** que lo desmiente
+2. El jugador elige cuál de las tres afirmaciones mostradas es la **realidad documentada** que lo desmiente
 3. Se juegan **5 rondas** y se acumula puntuación
 4. Si la puntuación está entre las **3 mejores**, se guarda en el ranking
 
@@ -42,32 +42,32 @@ cd 8MJuegoMemes
 
 ### 2. Compilar
 ```bash
-javac src/SistemaMemes.java
+javac fuentes/com/iescastelar/JuegoMemes.java
 ```
 
 ### 3. Ejecutar
 ```bash
-java -cp src SistemaMemes
+java -cp fuentes JuegoMemes
 ```
 
 ---
 
 ## 📁 Estructura del proyecto
-
 ```
 8MJuegoMemes/
-├── src/                    → Código fuente Java
-│   └── SistemaMemes.java
-├── datos/                  → Ficheros de datos del juego
-│   ├── memes.txt           → Los 15 memes (bulos) del juego
-│   ├── realidades.json     → Afirmaciones correctas y falsas con fuentes
-│   └── soluciones.xml      → Relación meme → realidad correcta
-├── resultados/             → Ranking de mejores puntuaciones
+├── fuentes/com/iescastelar/    → Código fuente Java
+│   ├── JuegoMemes.java
+│   └── Realidad.java
+├── datos/                      → Ficheros de datos del juego
+│   ├── memes.txt               → Los 15 memes (bulos) del juego
+│   ├── realidades.json         → Afirmaciones correctas y falsas con fuentes
+│   └── soluciones.xml          → Relación meme → realidad correcta
+├── resultados/                 → Ranking de mejores puntuaciones
 │   └── mejores.txt
-├── documentacion/          → Manuales del proyecto
+├── documentacion/              → Manuales del proyecto
 │   ├── ManualInstalacion.md
-│   ├── ManualUsuario.md
-│   └── javadoc/            → Documentación generada automáticamente
+│   ├── ManualUsuario.pdf
+│   └── javadoc/
 └── README.md
 ```
 
@@ -113,3 +113,8 @@ Los memes y realidades están documentados con fuentes académicas reales, entre
 ## 📝 Licencia
 
 MIT License — ver fichero [LICENSE](LICENSE)
+```
+
+Edítalo en GitHub en `main` y el commit:
+```
+Actualizar README con estructura y comandos correctos
