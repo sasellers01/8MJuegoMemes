@@ -1,0 +1,408 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>8M Juego Memes - Documentación API</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DejaVu Sans', Arial, sans-serif; font-size: 14px; color: #333; background: #fff; }
+  a { color: #4a6ee0; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  
+  /* Header */
+  .top-header { background: #4a6ee0; color: white; padding: 8px 20px; font-size: 12px; display: flex; justify-content: space-between; }
+  .title-bar { background: #2c3e6b; color: white; padding: 12px 20px; }
+  .title-bar h1 { font-size: 20px; margin-bottom: 2px; }
+  .title-bar p { font-size: 12px; opacity: .8; }
+  
+  /* Layout */
+  .layout { display: flex; min-height: calc(100vh - 100px); }
+  .sidebar { width: 220px; background: #f8f8f8; border-right: 1px solid #ddd; padding: 16px; flex-shrink: 0; }
+  .sidebar h3 { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #666; margin-bottom: 8px; margin-top: 16px; }
+  .sidebar h3:first-child { margin-top: 0; }
+  .sidebar a { display: block; font-size: 13px; padding: 3px 0; color: #4a6ee0; }
+  .main { flex: 1; padding: 24px 32px; }
+  
+  /* Sections */
+  h2.section { font-size: 18px; border-bottom: 2px solid #4a6ee0; padding-bottom: 6px; margin-bottom: 16px; color: #2c3e6b; }
+  h3.class-title { font-size: 15px; color: #2c3e6b; margin: 20px 0 6px; }
+  
+  /* Tables */
+  table.summary { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 13px; }
+  table.summary th { background: #4a6ee0; color: white; padding: 8px 12px; text-align: left; }
+  table.summary td { padding: 7px 12px; border-bottom: 1px solid #eee; vertical-align: top; }
+  table.summary tr:nth-child(even) td { background: #f9f9f9; }
+  table.summary td.type { color: #666; font-family: monospace; font-size: 12px; white-space: nowrap; }
+  table.summary td.name { font-weight: bold; font-family: monospace; color: #2c3e6b; }
+  table.summary td.desc { color: #444; }
+  
+  /* Method detail */
+  .method-detail { border: 1px solid #ddd; border-radius: 6px; margin-bottom: 20px; overflow: hidden; }
+  .method-header { background: #f0f4ff; padding: 10px 16px; border-bottom: 1px solid #ddd; }
+  .method-header .signature { font-family: monospace; font-size: 13px; color: #2c3e6b; font-weight: bold; }
+  .method-header .modifier { color: #666; font-weight: normal; }
+  .method-body { padding: 14px 16px; }
+  .method-body p { font-size: 13px; margin-bottom: 10px; line-height: 1.6; }
+  .param-table { margin-top: 8px; }
+  .param-table td { font-size: 12px; padding: 3px 8px; }
+  .param-table td:first-child { font-family: monospace; color: #c0392b; font-weight: bold; width: 140px; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 7px; border-radius: 10px; margin-right: 4px; }
+  .tag-static { background: #e8f4fd; color: #2980b9; border: 1px solid #aed6f1; }
+  .tag-returns { background: #eafaf1; color: #27ae60; border: 1px solid #a9dfbf; }
+  .tag-throws  { background: #fdf2f8; color: #8e44ad; border: 1px solid #d7bde2; }
+  
+  .package-box { background: #f0f4ff; border: 1px solid #c5d3f0; border-radius: 6px; padding: 12px 16px; margin-bottom: 20px; font-size: 13px; }
+  .package-box strong { color: #2c3e6b; }
+  
+  .since { font-size: 11px; color: #888; margin-top: 6px; }
+  footer { background: #f8f8f8; border-top: 1px solid #ddd; padding: 10px 20px; font-size: 11px; color: #888; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="top-header">
+  <span>com.iescastelar</span>
+  <span>8M Juego Memes 1.0 — IES Castelar 2026</span>
+</div>
+<div class="title-bar">
+  <h1>8M Juego Memes — Documentación API</h1>
+  <p>Generado para el paquete com.iescastelar</p>
+</div>
+
+<div class="layout">
+  <nav class="sidebar">
+    <h3>Paquetes</h3>
+    <a href="#pkg">com.iescastelar</a>
+
+    <h3>Clases</h3>
+    <a href="#SistemaMemes">SistemaMemes</a>
+    <a href="#Realidad">Realidad</a>
+    <a href="#Puntuacion">Puntuacion</a>
+
+    <h3>Métodos</h3>
+    <a href="#main">main()</a>
+    <a href="#hu1">comprobarFicherosDatos()</a>
+    <a href="#hu2">comprobarFicheroResultados()</a>
+    <a href="#hu3">leerMemes()</a>
+    <a href="#hu4">leerRealidades()</a>
+    <a href="#hu5">mostrarMemeYRealidades()</a>
+    <a href="#hu6">comprobarRespuesta()</a>
+    <a href="#hu7">jugar()</a>
+    <a href="#hu8">mostrarPuntuacionFinal()</a>
+    <a href="#hu9">gestionarRanking()</a>
+    <a href="#hu10">mostrarRankingYDespedida()</a>
+  </nav>
+
+  <main class="main">
+
+    <!-- PAQUETE -->
+    <h2 class="section" id="pkg">Paquete com.iescastelar</h2>
+    <div class="package-box">
+      <strong>Paquete:</strong> com.iescastelar<br>
+      <strong>Fichero fuente:</strong> fuentes/com/iescastelar/SistemaMemes.java<br>
+      <strong>Versión:</strong> 1.0 — Marzo 2026<br>
+      <strong>Autores:</strong> Adrián Tena Gallardo, Sergio Seller, Sergio González
+    </div>
+
+    <!-- CLASE SISTEMAMEMES -->
+    <h2 class="section" id="SistemaMemes">Clase SistemaMemes</h2>
+    <p style="font-size:13px;margin-bottom:16px;">
+      Clase principal del juego Memes 8M. Contiene todos los métodos estáticos
+      que implementan las Historias de Usuario (HU1–HU10) y las clases internas
+      de datos <code>Realidad</code> y <code>Puntuacion</code>.
+    </p>
+
+    <h3>Resumen de constantes</h3>
+    <table class="summary">
+      <tr><th>Tipo</th><th>Nombre</th><th>Descripción</th></tr>
+      <tr>
+        <td class="type">static final int</td>
+        <td class="name">RONDAS</td>
+        <td class="desc">Número de memes por partida. Valor: <code>5</code></td>
+      </tr>
+      <tr>
+        <td class="type">static final int</td>
+        <td class="name">MAX_RANKING</td>
+        <td class="desc">Máximo de entradas en el ranking. Valor: <code>3</code></td>
+      </tr>
+    </table>
+
+    <h3>Resumen de métodos</h3>
+    <table class="summary">
+      <tr><th>Tipo devuelto</th><th>Método</th><th>Descripción</th></tr>
+      <tr>
+        <td class="type">static boolean</td>
+        <td class="name"><a href="#hu1">comprobarFicherosDatos()</a></td>
+        <td class="desc">HU1 — Verifica que existen los 3 ficheros de datos.</td>
+      </tr>
+      <tr>
+        <td class="type">static void</td>
+        <td class="name"><a href="#hu2">comprobarFicheroResultados()</a></td>
+        <td class="desc">HU2 — Crea resultados/mejores.txt si no existe.</td>
+      </tr>
+      <tr>
+        <td class="type">static Map&lt;Integer,String&gt;</td>
+        <td class="name"><a href="#hu3">leerMemes(String)</a></td>
+        <td class="desc">HU3 — Lee datos/memes.txt y devuelve mapa id→texto.</td>
+      </tr>
+      <tr>
+        <td class="type">static List&lt;Realidad&gt;</td>
+        <td class="name"><a href="#hu4">leerRealidades(String)</a></td>
+        <td class="desc">HU4 — Parsea datos/realidades.json sin librerías externas.</td>
+      </tr>
+      <tr>
+        <td class="type">static int</td>
+        <td class="name"><a href="#hu5">mostrarMemeYRealidades(Map, List, List, int)</a></td>
+        <td class="desc">HU5 — Muestra un meme al azar con 2 opciones mezcladas.</td>
+      </tr>
+      <tr>
+        <td class="type">static int</td>
+        <td class="name"><a href="#hu6">comprobarRespuesta(Scanner, int, int)</a></td>
+        <td class="desc">HU6 — Valida la respuesta del usuario y actualiza puntuación.</td>
+      </tr>
+      <tr>
+        <td class="type">static int</td>
+        <td class="name"><a href="#hu7">jugar(Map, List, Scanner)</a></td>
+        <td class="desc">HU7 — Bucle principal de 5 rondas.</td>
+      </tr>
+      <tr>
+        <td class="type">static void</td>
+        <td class="name"><a href="#hu8">mostrarPuntuacionFinal(int)</a></td>
+        <td class="desc">HU8 — Muestra la puntuación final obtenida.</td>
+      </tr>
+      <tr>
+        <td class="type">static void</td>
+        <td class="name"><a href="#hu9">gestionarRanking(Scanner, int)</a></td>
+        <td class="desc">HU9 — Guarda en ranking si la puntuación es top 3.</td>
+      </tr>
+      <tr>
+        <td class="type">static void</td>
+        <td class="name"><a href="#hu10">mostrarRankingYDespedida()</a></td>
+        <td class="desc">HU10 — Muestra el ranking final y se despide.</td>
+      </tr>
+      <tr>
+        <td class="type">static void</td>
+        <td class="name"><a href="#main">main(String[])</a></td>
+        <td class="desc">Punto de entrada. Ejecuta el flujo completo HU1–HU10.</td>
+      </tr>
+    </table>
+
+    <!-- MÉTODOS DETALLADOS -->
+    <h2 class="section">Detalle de métodos</h2>
+
+    <!-- HU1 -->
+    <div class="method-detail" id="hu1">
+      <div class="method-header">
+        <span class="tag tag-static">static</span>
+        <span class="signature"><span class="modifier">boolean </span>comprobarFicherosDatos()</span>
+      </div>
+      <div class="method-body">
+        <p><strong>HU1</strong> — Comprueba que existen los tres ficheros de datos obligatorios:
+        <code>datos/memes.txt</code>, <code>datos/realidades.json</code> y
+        <code>datos/soluciones.xml</code>. Si alguno no existe imprime un mensaje de error.</p>
+        <table class="param-table">
+          <tr><td>Devuelve:</td><td><span class="tag tag-returns">boolean</span> <code>true</code> si todos existen, <code>false</code> en caso contrario</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- HU2 -->
+    <div class="method-detail" id="hu2">
+      <div class="method-header">
+        <span class="tag tag-static">static</span>
+        <span class="signature"><span class="modifier">void </span>comprobarFicheroResultados()</span>
+      </div>
+      <div class="method-body">
+        <p><strong>HU2</strong> — Comprueba que existe <code>resultados/mejores.txt</code>.
+        Si no existe crea el directorio y el fichero vacío.</p>
+        <table class="param-table">
+          <tr><td>Lanza:</td><td><span class="tag tag-throws">IOException</span> si hay un error al crear el fichero</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- HU3 -->
+    <div class="method-detail" id="hu3">
+      <div class="method-header">
+        <span class="tag tag-static">static</span>
+        <span class="signature"><span class="modifier">Map&lt;Integer, String&gt; </span>leerMemes(String ruta)</span>
+      </div>
+      <div class="method-body">
+        <p><strong>HU3</strong> — Lee el fichero de memes línea a línea. Ignora líneas vacías y
+        comentarios (que empiezan por <code>#</code>). Separa cada línea por el delimitador
+        <code>|</code> con límite 2 para no romper textos que contengan el carácter pipe.</p>
+        <table class="param-table">
+          <tr><td>ruta</td><td>Ruta relativa al fichero <code>datos/memes.txt</code></td></tr>
+          <tr><td>Devuelve:</td><td><span class="tag tag-returns">Map</span> <code>LinkedHashMap&lt;Integer, String&gt;</code> con id como clave y texto como valor, en orden de inserción</td></tr>
+          <tr><td>Lanza:</td><td><span class="tag tag-throws">IOException</span> si el fichero no se puede leer</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- HU4 -->
+    <div class="method-detail" id="hu4">
+      <div class="method-header">
+        <span class="tag tag-static">static</span>
+        <span class="signature"><span class="modifier">List&lt;Realidad&gt; </span>leerRealidades(String ruta)</span>
+      </div>
+      <div class="method-body">
+        <p><strong>HU4</strong> — Parsea el fichero JSON manualmente sin librerías externas.
+        Divide el contenido por el patrón <code>{"id"</code> para aislar cada entrada.
+        Usa los helpers <code>extraerEntero()</code>, <code>extraerJsonAnidado()</code>
+        y <code>extraerJson()</code>.</p>
+        <table class="param-table">
+          <tr><td>ruta</td><td>Ruta relativa al fichero <code>datos/realidades.json</code></td></tr>
+          <tr><td>Devuelve:</td><td><span class="tag tag-returns">List</span> <code>ArrayList&lt;Realidad&gt;</code> con todas las realidades cargadas</td></tr>
+          <tr><td>Lanza:</td><td><span class="tag tag-throws">IOException</span> si el fichero no se puede leer</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- HU5 -->
+    <div class="method-detail" id="hu5">
+      <div class="method-header">
+        <span class="tag tag-static">static</span>
+        <span class="signature"><span class="modifier">int </span>mostrarMemeYRealidades(Map&lt;Integer,String&gt; memes, List&lt;Realidad&gt; realidades, List&lt;Integer&gt; memesUsados, int puntuacion)</span>
+      </div>
+      <div class="method-body">
+        <p><strong>HU5</strong> — Selecciona aleatoriamente un meme de los disponibles (no usados),
+        busca su realidad correspondiente y muestra las dos opciones mezcladas. Añade el memeId
+        seleccionado a <code>memesUsados</code> para evitar repeticiones.</p>
+        <table class="param-table">
+          <tr><td>memes</td><td>Mapa con todos los memes cargados</td></tr>
+          <tr><td>realidades</td><td>Lista con todas las realidades cargadas</td></tr>
+          <tr><td>memesUsados</td><td>Lista de IDs ya mostrados (se actualiza en este método)</td></tr>
+          <tr><td>puntuacion</td><td>Puntuación actual para mostrar en el marcador</td></tr>
+          <tr><td>Devuelve:</td><td><span class="tag tag-returns">int</span> Número de opción correcta (1 o 2) para que HU6 lo compruebe</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- HU6 -->
+    <div class="method-detail" id="hu6">
+      <div class="method-header">
+        <span class="tag tag-static">static</span>
+        <span class="signature"><span class="modifier">int </span>comprobarRespuesta(Scanner scanner, int opcionCorrecta, int puntuacion)</span>
+      </div>
+      <div class="method-body">
+        <p><strong>HU6</strong> — Lee la respuesta del usuario y la valida (debe ser 1 o 2).
+        Si coincide con la opción correcta suma un punto y muestra un mensaje positivo.
+        Si es incorrecta muestra un mensaje de error sin modificar la puntuación.</p>
+        <table class="param-table">
+          <tr><td>scanner</td><td>Escáner de entrada estándar</td></tr>
+          <tr><td>opcionCorrecta</td><td>Número (1 o 2) de la opción correcta devuelto por HU5</td></tr>
+          <tr><td>puntuacion</td><td>Puntuación antes de esta ronda</td></tr>
+          <tr><td>Devuelve:</td><td><span class="tag tag-returns">int</span> Nueva puntuación tras evaluar la respuesta</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- HU7 -->
+    <div class="method-detail" id="hu7">
+      <div class="method-header">
+        <span class="tag tag-static">static</span>
+        <span class="signature"><span class="modifier">int </span>jugar(Map&lt;Integer,String&gt; memes, List&lt;Realidad&gt; realidades, Scanner scanner)</span>
+      </div>
+      <div class="method-body">
+        <p><strong>HU7</strong> — Ejecuta el bucle principal del juego durante
+        <code>RONDAS</code> (5) iteraciones. En cada iteración llama a
+        <code>mostrarMemeYRealidades()</code> (HU5) y <code>comprobarRespuesta()</code> (HU6).</p>
+        <table class="param-table">
+          <tr><td>Devuelve:</td><td><span class="tag tag-returns">int</span> Puntuación final obtenida</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- HU8 -->
+    <div class="method-detail" id="hu8">
+      <div class="method-header">
+        <span class="tag tag-static">static</span>
+        <span class="signature"><span class="modifier">void </span>mostrarPuntuacionFinal(int puntuacion)</span>
+      </div>
+      <div class="method-body">
+        <p><strong>HU8</strong> — Muestra un recuadro con la puntuación final obtenida
+        sobre el total de rondas.</p>
+        <table class="param-table">
+          <tr><td>puntuacion</td><td>Puntuación total al terminar las 5 rondas</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- HU9 -->
+    <div class="method-detail" id="hu9">
+      <div class="method-header">
+        <span class="tag tag-static">static</span>
+        <span class="signature"><span class="modifier">void </span>gestionarRanking(Scanner scanner, int puntuacion)</span>
+      </div>
+      <div class="method-body">
+        <p><strong>HU9</strong> — Lee el ranking actual, comprueba si la puntuación entra
+        entre las 3 mejores, y si es así pide el nombre al usuario y guarda la entrada
+        en <code>resultados/mejores.txt</code> ordenada de mayor a menor.</p>
+        <table class="param-table">
+          <tr><td>Lanza:</td><td><span class="tag tag-throws">IOException</span> si hay error al leer o escribir el fichero</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- HU10 -->
+    <div class="method-detail" id="hu10">
+      <div class="method-header">
+        <span class="tag tag-static">static</span>
+        <span class="signature"><span class="modifier">void </span>mostrarRankingYDespedida()</span>
+      </div>
+      <div class="method-body">
+        <p><strong>HU10</strong> — Lee y muestra las mejores puntuaciones guardadas
+        en <code>resultados/mejores.txt</code> con formato numerado. Finaliza con
+        un mensaje de despedida.</p>
+        <table class="param-table">
+          <tr><td>Lanza:</td><td><span class="tag tag-throws">IOException</span> si hay error al leer el fichero</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="method-detail" id="main">
+      <div class="method-header">
+        <span class="tag tag-static">static</span>
+        <span class="signature"><span class="modifier">void </span>main(String[] args)</span>
+      </div>
+      <div class="method-body">
+        <p>Punto de entrada del programa. Ejecuta el flujo completo:
+        HU1 → HU2 → HU3 → HU4 → HU7 (HU5+HU6) → HU8 → HU9 → HU10.</p>
+        <table class="param-table">
+          <tr><td>args</td><td>Argumentos de línea de comandos (no se usan)</td></tr>
+          <tr><td>Lanza:</td><td><span class="tag tag-throws">Exception</span> si ocurre algún error de E/S</td></tr>
+        </table>
+        <p class="since">Desde: versión 1.0</p>
+      </div>
+    </div>
+
+    <!-- CLASES INTERNAS -->
+    <h2 class="section" id="Realidad">Clase interna: Realidad</h2>
+    <p style="font-size:13px;margin-bottom:12px;">Representa una realidad con opción correcta y falsa que desmiente un meme.</p>
+    <table class="summary">
+      <tr><th>Tipo</th><th>Campo</th><th>Descripción</th></tr>
+      <tr><td class="type">int</td><td class="name">id</td><td class="desc">Identificador único, coincide con el id del meme</td></tr>
+      <tr><td class="type">String</td><td class="name">textoCorrecto</td><td class="desc">Afirmación verdadera que desmiente el meme</td></tr>
+      <tr><td class="type">String</td><td class="name">fuenteCorrecta</td><td class="desc">Fuente académica real</td></tr>
+      <tr><td class="type">String</td><td class="name">textoFalso</td><td class="desc">Afirmación falsa con apariencia creíble</td></tr>
+      <tr><td class="type">String</td><td class="name">fuenteFalsa</td><td class="desc">Fuente inventada de aspecto oficial</td></tr>
+    </table>
+
+    <h2 class="section" id="Puntuacion">Clase interna: Puntuacion</h2>
+    <p style="font-size:13px;margin-bottom:12px;">Representa una entrada del ranking de mejores puntuaciones.</p>
+    <table class="summary">
+      <tr><th>Tipo</th><th>Campo</th><th>Descripción</th></tr>
+      <tr><td class="type">int</td><td class="name">puntos</td><td class="desc">Puntos obtenidos en la partida</td></tr>
+      <tr><td class="type">String</td><td class="name">nombre</td><td class="desc">Nombre del jugador</td></tr>
+      <tr><td class="type">String</td><td class="name">fecha</td><td class="desc">Fecha de la partida en formato yyyy-MM-dd</td></tr>
+    </table>
+
+  </main>
+</div>
+
+<footer>
+  Documentación generada para 8M Juego Memes 1.0 — com.iescastelar — IES Castelar 2026
+</footer>
+</body>
+</html>
