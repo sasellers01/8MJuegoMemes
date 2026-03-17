@@ -1,3 +1,4 @@
+package com.iescastelar;
 public class Main {
 	public static void main(String[] args) {
 		GestorFicheros gestor = new GestorFicheros();
