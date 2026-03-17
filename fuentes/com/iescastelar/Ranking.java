@@ -1,10 +1,11 @@
 package com.iescastelar;
+
 import java.io.*;
 import java.util.*;
 
 public class Ranking {
 
-    private static final String ARCHIVO = "mejores.txt";
+    private static final String ARCHIVO = "resultados/mejores.txt";
     private static final int MAX_PUNTUACIONES = 3;
 
     /**
