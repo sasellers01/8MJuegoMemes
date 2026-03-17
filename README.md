@@ -28,7 +28,8 @@ Desarrollado como proyecto de aula en el marco del **8 de Marzo, Día Internacio
 ## ⚙️ Requisitos
 
 - Java 17 o superior
-- Sin dependencias externas — solo el JDK estándar
+- Librería `org.json` (incluida en `/lib` si se usa externamente)
+- Sistema operativo compatible con Java (Windows, Linux, Mac)
 
 ---
 
@@ -42,24 +43,20 @@ cd 8MJuegoMemes
 
 ### 2. Compilar
 ```bash
-javac fuentes/com/iescastelar/JuegoMemes.java
+mkdir bin
+javac -encoding UTF-8 -d compilados -cp lib\json-20251224.jar fuentes\com\iescastelar\*.java
 ```
 
 ### 3. Ejecutar
 ```bash
-java -cp fuentes JuegoMemes
+java -cp lib\json-20251224.jar fuentes\com\iescastelar\JuegoMemes.java
 ```
 
-### 4. Ejecutar los tests
+### 4. Compilar y ejecutar los tests
 ```bash
-javac -d . test/SistemaMemesTest.java
-java -ea com.iescastelar.SistemaMemesTest
+javac -encoding UTF-8 -d test\compilados -cp compilados;test\com\iescastelar\lib\junit-platform-console-standalone-1.9.2.jar test\com\iescastelar\*.java
 
-javac -d . test/ComprobarRespuestaTest.java
-java -ea com.iescastelar.ComprobarRespuestaTest
-
-javac -d . test/RankingTest.java
-java -ea com.iescastelar.RankingTest
+java -jar tests\lib\junit-platform-console-standalone-1.9.2.jar -cp compilados;test\compilados --scan-class-path
 ```
 
 ---
