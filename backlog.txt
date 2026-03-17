@@ -1,25 +1,27 @@
-URL
-----------------------
-HU1  - sergio s -hecho -compilado
-HU2  - sergio s -hecho -compilado
-HU3  - sergio s -progres
-HU4  - sergio g -progres -compilado ERRORES*
-HU5  - adri
-HU6  - adri
-HU7  - adri
-HU8  - sergio s
-HU9  - sergio g -progres -compilado ERRORES*
-HU10 - adri
+URL: https://github.com/sasellers01/8MJuegoMemes/tree/main
 
-TT1 - Sergio g -hecho -modificado por adri
-TT2 - sergio g -hecho -modificado por adri
+=== HISTORIAS DE USUARIO ===
+HU1  | Sergio S   | hecho
+HU2  | Sergio S   | hecho
+HU3  | Sergio S   | hecho
+HU4  | Sergio S   | hecho
+HU5  | Adrián     | hecho
+HU6  | Adrián     | hecho
+HU7  | Sergio G   | hecho
+HU8  | Sergio S   | hecho
+HU9  | Sergio G   | hecho
+HU10 | Sergio G   | hecho
 
-TT3 - adri -hecho
-TT4 - sergio g -hecho -modificado adri
-TT5 - sergio g -hecho
-TT6 - adri -hecho
-TT7 - adri -hecho
+=== REQUERIMIENTOS TÉCNICOS ===
+TT1  | Sergio G   | hecho
+TT2  | Sergio G   | hecho
+TT3  | Adrián     | hecho
+TT4  | Sergio G   | hecho
+TT5  | Sergio G   | hecho
+TT6  | Adrián     | hecho
+TT7  | Adrián     | hecho
 
-TD1 - adri
-TD2 - sergio s
-TD3 - sergio g
+=== DOCUMENTACIÓN ===
+TD1  | Adrián     | hecho
+TD2  | Sergio S   | hecho
+TD3  | Sergio G   | hecho
