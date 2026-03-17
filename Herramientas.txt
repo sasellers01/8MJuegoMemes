@@ -1,0 +1,15 @@
+Compilar:
+
+..\jdk-25\bin\javac -encoding UTF-8 -d compilados -cp lib\json-20251224.jar fuentes\com\iescastelar\*.java
+
+Ejecutar:
+
+..\jdk-25\bin\java -cp lib\json-20251224.jar fuentes\com\iescastelar\JuegoMemes.java
+
+Compilar Tests:
+
+..\jdk-25\bin\javac -encoding UTF-8 -d test\compilados -cp compilados;test\com\iescastelar\lib\junit-platform-console-standalone-1.9.2.jar test\com\iescastelar\*.java
+
+Ejecutar Test:
+
+..\jdk-25\bin\java -jar tests\lib\junit-platform-console-standalone-1.9.2.jar -cp compilados;test\compilados --scan-class-path

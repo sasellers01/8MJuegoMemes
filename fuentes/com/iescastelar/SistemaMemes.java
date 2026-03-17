@@ -69,4 +69,3 @@ public class SistemaMemes {
         return opciones.indexOf(realidad.textoCorrecto) + 1;
     }
 }
-"" 
