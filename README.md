@@ -50,14 +50,40 @@ javac fuentes/com/iescastelar/JuegoMemes.java
 java -cp fuentes JuegoMemes
 ```
 
+### 4. Ejecutar los tests
+```bash
+javac -d . test/SistemaMemesTest.java
+java -ea com.iescastelar.SistemaMemesTest
+
+javac -d . test/ComprobarRespuestaTest.java
+java -ea com.iescastelar.ComprobarRespuestaTest
+
+javac -d . test/RankingTest.java
+java -ea com.iescastelar.RankingTest
+```
+
 ---
 
 ## 📁 Estructura del proyecto
 ```
 8MJuegoMemes/
 ├── fuentes/com/iescastelar/    → Código fuente Java
-│   ├── JuegoMemes.java
-│   └── Realidad.java
+│   ├── ComprobarRespuesta.java → HU6
+│   ├── Despedida.java          → HU10
+│   ├── GestorFicheros.java     → HU1, HU2
+│   ├── JuegoMemes.java         → HU7 - programa principal
+│   ├── Main.java               → HU8
+│   ├── Meme.java               → clase modelo
+│   ├── Ranking.java            → HU9
+│   ├── Realidad.java           → clase modelo
+│   ├── SistemaMemes.java       → HU5
+│   └── Solucion.java           → clase modelo
+├── test/                       → Tests unitarios
+│   ├── ComprobarRespuestaTest.java
+│   ├── DespedidaTest.java
+│   ├── JuegoMemesTest.java
+│   ├── RankingTest.java
+│   └── SistemaMemesTest.java
 ├── datos/                      → Ficheros de datos del juego
 │   ├── memes.txt               → Los 15 memes (bulos) del juego
 │   ├── realidades.json         → Afirmaciones correctas y falsas con fuentes
@@ -67,8 +93,14 @@ java -cp fuentes JuegoMemes
 ├── documentacion/              → Manuales del proyecto
 │   ├── ManualInstalacion.md
 │   ├── ManualUsuario.pdf
-│   └── javadoc/                → Documentación generada automáticamente
+│   ├── ReadmeHU05.md
+│   ├── ReadmeHU06.md
+│   ├── ReadmeHU07.md
+│   ├── ReadmeHU09.md
+│   ├── ReadmeHU10.md
+│   └── javadoc/
 │       └── index.html
+├── backlog.txt
 └── README.md
 ```
 
