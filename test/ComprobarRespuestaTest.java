@@ -1,54 +1,85 @@
 package com.iescastelar;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import java.io.ByteArrayInputStream;
+import java.util.Scanner;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 /**
- * Tests para HU6: comprobarRespuesta()
- * @author Adrián Tena Gallardo
+ * Tests para HU6 - ComprobarRespuesta
+ * @author Test
  */
 public class ComprobarRespuestaTest {
 
-    /**
-     * Test 1: comprueba que una respuesta correcta suma un punto
-     */
-    static void testRespuestaCorrecta() {
-        Integer puntuacion = 0;
-        Integer opcionCorrecta = 1;
-        Integer respuesta = 1;
+    private ComprobarRespuesta.Realidad realidad;
 
-        if (respuesta.equals(opcionCorrecta)) puntuacion++;
-
-        assert puntuacion == 1 : "FALLO: deberia sumar 1 punto";
-        System.out.println("Test 1 OK: respuesta correcta suma punto");
+    @BeforeEach
+    void setUp() {
+        realidad = new ComprobarRespuesta.Realidad(
+                1,
+                "El 90% de los hogares españoles tiene acceso a internet",
+                "INE 2023",
+                "Solo el 10% de los hogares tiene internet",
+                "Fuente falsa"
+        );
     }
 
-    /**
-     * Test 2: comprueba que una respuesta incorrecta no suma punto
-     */
-    static void testRespuestaIncorrecta() {
-        Integer puntuacion = 0;
-        Integer opcionCorrecta = 1;
-        Integer respuesta = 2;
-
-        if (respuesta.equals(opcionCorrecta)) puntuacion++;
-
-        assert puntuacion == 0 : "FALLO: no deberia sumar punto";
-        System.out.println("Test 2 OK: respuesta incorrecta no suma punto");
+    // ── Test 1: respuesta correcta suma punto ──────────────────────────────
+    @Test
+    void testRespuestaCorrectaSumaPunto() {
+        Scanner sc = new Scanner(new ByteArrayInputStream("1\n".getBytes()));
+        Integer resultado = ComprobarRespuesta.comprobarRespuesta(sc, 1, realidad, 0);
+        assertEquals(1, resultado, "Respuesta correcta debe sumar 1 punto");
     }
 
-    /**
-     * Test 3: comprueba que solo acepta valores entre 1 y 3
-     */
-    static void testRespuestaInvalida() {
-        Integer respuesta = 5;
-        Boolean valida = respuesta >= 1 && respuesta <= 3;
-
-        assert !valida : "FALLO: 5 no deberia ser valido";
-        System.out.println("Test 3 OK: respuesta invalida rechazada");
+    // ── Test 2: respuesta incorrecta no suma punto ─────────────────────────
+    @Test
+    void testRespuestaIncorrectaNoSumaPunto() {
+        Scanner sc = new Scanner(new ByteArrayInputStream("2\n".getBytes()));
+        Integer resultado = ComprobarRespuesta.comprobarRespuesta(sc, 1, realidad, 0);
+        assertEquals(0, resultado, "Respuesta incorrecta no debe sumar punto");
     }
 
-    public static void main(String[] args) {
-        testRespuestaCorrecta();
-        testRespuestaIncorrecta();
-        testRespuestaInvalida();
-        System.out.println("Todos los tests de HU6 pasados correctamente");
+    // ── Test 3: puntuación acumulada correctamente ─────────────────────────
+    @Test
+    void testPuntuacionAcumulada() {
+        Scanner sc = new Scanner(new ByteArrayInputStream("1\n".getBytes()));
+        Integer resultado = ComprobarRespuesta.comprobarRespuesta(sc, 1, realidad, 5);
+        assertEquals(6, resultado, "Debe acumular la puntuacion previa");
+    }
+
+    // ── Test 4: entrada inválida y luego válida ────────────────────────────
+    @Test
+    void testEntradaInvalidaLuegoValida() {
+        // Escribe 0 (inválido), luego 5 (inválido), luego 2 (válido)
+        Scanner sc = new Scanner(new ByteArrayInputStream("0\n5\n2\n".getBytes()));
+        Integer resultado = ComprobarRespuesta.comprobarRespuesta(sc, 2, realidad, 0);
+        assertEquals(1, resultado, "Debe aceptar la respuesta valida tras entradas invalidas");
+    }
+
+    // ── Test 5: texto no numérico y luego válido ───────────────────────────
+    @Test
+    void testTextoNoNumericoLuegoValido() {
+        Scanner sc = new Scanner(new ByteArrayInputStream("abc\n3\n".getBytes()));
+        Integer resultado = ComprobarRespuesta.comprobarRespuesta(sc, 3, realidad, 2);
+        assertEquals(3, resultado, "Debe recuperarse de entrada no numerica");
+    }
+
+    // ── Test 6: opción correcta = 2 ───────────────────────────────────────
+    @Test
+    void testOpcionCorrecta2() {
+        Scanner sc = new Scanner(new ByteArrayInputStream("2\n".getBytes()));
+        Integer resultado = ComprobarRespuesta.comprobarRespuesta(sc, 2, realidad, 3);
+        assertEquals(4, resultado, "Debe sumar punto cuando la opcion correcta es la 2");
+    }
+
+    // ── Test 7: opción correcta = 3 ───────────────────────────────────────
+    @Test
+    void testOpcionCorrecta3() {
+        Scanner sc = new Scanner(new ByteArrayInputStream("3\n".getBytes()));
+        Integer resultado = ComprobarRespuesta.comprobarRespuesta(sc, 3, realidad, 0);
+        assertEquals(1, resultado, "Debe sumar punto cuando la opcion correcta es la 3");
     }
 }
